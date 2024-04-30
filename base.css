@@ -1,0 +1,53 @@
+.parent-container {
+    width: 798px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.pdf-item-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.ul-level-1 {
+    padding-left: 40px;
+}
+
+.ul-level-2 {
+    padding-left: 70px;
+}
+
+.ul-level-3 {
+    padding-left: 100px;
+}
+
+.ul-level-4 {
+    padding-left: 130px;
+}
+
+.ul-level-5 {
+    padding-left: 150px;
+}
+
+.ul-level-1::before {
+    color: black;
+}
+
+.ul-level-2::before {
+    color: white;
+    border: 1px solid black;
+}
+
+.ul-level-3::before {
+    color: black;
+}
+
+.ul-level-4::before {
+    color: white;
+    border: 1px solid black;
+}
+
+.ul-level-5::before {
+    color: black;
+}
