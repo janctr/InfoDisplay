@@ -1,4 +1,4 @@
-define(['qlik', 'text!./template.html', 'css!./base.css'],
+define(['qlik', 'text!./index.html', 'css!./index.css'],
     function (qlik, template) {
         return {
             template: template,
