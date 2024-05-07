@@ -55,19 +55,22 @@ define(['./About', './util'], function (About, Util) {
 
     const dimensions = {
         uses: 'dimensions',
-        min: 1,
-        max: 2,
+        min: 2,
     };
+
     const measures = {
         uses: 'measures',
         min: 0,
     };
+
     const sorting = {
         uses: 'sorting',
     };
+
     const addons = {
         uses: 'addons',
     };
+
     const settings = {
         uses: 'settings',
     };
