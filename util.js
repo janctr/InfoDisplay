@@ -16,7 +16,6 @@ define(['qlik'], function (qlik) {
 
     // dimensions : [ { columnName: 'Title', nullSuppression: false }]
     function createHyperCube(dimensions) {
-        console.log('hypercube dims: ', dimensions);
         return new Promise((resolve, reject) => {
             const qDimensions = dimensions.map((column) => {
                 return {
@@ -24,8 +23,6 @@ define(['qlik'], function (qlik) {
                     qDef: { qFieldDefs: [column.columnName] },
                 };
             });
-            // const qMeasures
-            console.log('creating cube...');
 
             qlik.currApp().createCube(
                 {
@@ -43,6 +40,16 @@ define(['qlik'], function (qlik) {
                 }
             );
         });
+    }
+
+    function getColumnNumber(hyperCube, columnName) {
+        const dimensionInfoArray = hyperCube.qDimensionInfo;
+
+        for (const [index, dimensionInfo] of dimensionInfoArray.entries()) {
+            if (columnName === dimensionInfo.qFallbackTitle) return index;
+        }
+
+        return -1;
     }
 
     function nestedListGen(arr, ul) {
@@ -98,6 +105,7 @@ define(['qlik'], function (qlik) {
     }
 
     return {
+        getColumnNumber,
         getObjectId,
         getObjectTitleId,
         getObjectContentId,
